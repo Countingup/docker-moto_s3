@@ -4,7 +4,7 @@
 
 A docker image using [Moto](https://github.com/spulec/moto) in [Stand-alone Server Mode](https://github.com/spulec/moto#stand-alone-server-mode), to provide a Python based implementation of [Amazon S3](https://aws.amazon.com/s3/). This can then be used in development and testing.
 
-Built on the Alpine 3.11 library image from Docker Hub.
+Built on the `python:3.8-alpine` library image from Docker Hub.
 
 Supports passing options (with the exception of `service`) to `moto_server` (also see the [Moto docs](http://docs.getmoto.org/en/latest/docs/server_mode.html):
 
@@ -51,7 +51,7 @@ $ docker run -d -p 4567:4567 countingup/moto_s3 --reload
 ## Usage in Docker Compose
 
 ```
-s3rver:
+moto_s3:
   image: countingup/moto_s3
   ports:
     # container port should be 4567
