@@ -1,6 +1,6 @@
 FROM python:3.8-alpine
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev python3-dev libffi-dev openssl-dev cargo && \
+RUN apk add --no-cache --upgrade --virtual .build-deps gcc musl-dev python3-dev libffi-dev openssl-dev cargo && \
   pip3 install --no-cache-dir --upgrade "moto[server]~=1.3.0" && \
   apk del --no-network .build-deps && \
   rm -rf ~/.cargo/registry
